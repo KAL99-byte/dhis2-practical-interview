@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './WeatherApp.css';
 
 const WeatherApp = () => {
@@ -6,6 +6,7 @@ const WeatherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [currentDateTime, setCurrentDateTime] = useState('');
 
   const API_KEY = '4c44cf6e7c6d5ffb6d184d248cb7a6e7';
   const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -37,6 +38,20 @@ const WeatherApp = () => {
     }
   };
 
+  useEffect(() => {
+    const updateDateTime = () => {
+      const now = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+      const formattedDateTime = now.toLocaleDateString('en-US', options);
+      setCurrentDateTime(formattedDateTime);
+    };
+
+    const intervalId = setInterval(updateDateTime, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
@@ -60,6 +75,9 @@ const WeatherApp = () => {
           <p>Wind Speed: {weatherData.wind.speed} m/s</p>
         </div>
       )}
+      <div className="date-time">
+        <p>{currentDateTime}</p>
+      </div>
     </div>
   );
 };
