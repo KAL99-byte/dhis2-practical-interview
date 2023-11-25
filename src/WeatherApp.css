@@ -1,0 +1,27 @@
+/* src/WeatherApp.css */
+.weather-app {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .search-container {
+    margin-top: 20px;
+  }
+  
+  input {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .weather-details {
+    margin-top: 20px;
+  }
+  
