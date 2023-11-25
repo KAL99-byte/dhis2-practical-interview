@@ -63,7 +63,7 @@ const WeatherApp = () => {
           onChange={(e) => setLocation(e.target.value)}
         />
         <button onClick={fetchWeatherData} disabled={loading}>
-          {loading ? 'Loading...' : 'Get Weather'}
+          {loading ? 'Loading...' : 'Search'}
         </button>
       </div>
       {error && <p className="error-message">{error}</p>}
