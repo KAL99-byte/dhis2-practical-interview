@@ -1,28 +1,36 @@
 /* src/WeatherApp.css */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('img/clouds.jpg') center/cover no-repeat;
+    font-family: 'Arial', sans-serif;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+}
+
 .weather-app {
     text-align: center;
     margin: 20px;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: rgba(240, 240, 240, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-container {
+}
+
+.search-container {
     margin-top: 20px;
-  }
-  
-  input {
+}
+
+input {
     padding: 15px;
     margin-right: 10px;
     font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 8px;
     outline: none;
-  }
-  
-  button {
+}
+
+button {
     padding: 15px 30px;
     font-size: 18px;
     background-color: #4caf50;
@@ -31,53 +39,52 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #45a049;
-  }
-  
-  button:disabled {
+}
+
+button:disabled {
     background-color: #ddd;
     cursor: not-allowed;
-  }
-  
-  .error-message {
+}
+
+.error-message {
     color: #ff4040;
     margin-top: 10px;
-  }
-  
-  .weather-details {
+}
+
+.weather-details {
     margin-top: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .weather-details h2 {
+}
+
+.weather-details h2 {
     color: #333;
     margin-bottom: 10px;
-  }
-  
-  .weather-details p {
+}
+
+.weather-details p {
     margin: 10px 0;
     color: #555;
-  }
-  
-  @media (max-width: 600px) {
+}
+
+@media (max-width: 600px) {
     .weather-app {
-      margin: 10px;
+        margin: 10px;
     }
-  
+
     input {
-      width: 100%;
-      margin-bottom: 10px;
+        width: 100%;
+        margin-bottom: 10px;
     }
-  
+
     button {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
+}

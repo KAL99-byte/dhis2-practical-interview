@@ -11,6 +11,11 @@ const WeatherApp = () => {
   const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
   const fetchWeatherData = async () => {
+    if (!location.trim()) {
+      setError('Please enter a city/country');
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
